@@ -2,24 +2,43 @@ import numpy as np
 
 
 class LinearRegression:
+    """
+    Linear Regression model that solves for weights using closed form approach
+    """
+
     # w: np.ndarray
     # b: float
 
     def __init__(self):
+        """ "
+        Initialize weights and biases
+        """
         self.b = 0
         self.w = np.ndarray(1)
         self.losses = []
 
     # raise NotImplementedError()
 
-    def fit(self, X, y):
+    def fit(self, X: np.ndarray, y: np.ndarray) -> None:
+        """ "
+        Solve for parameters analytically, using closed-form solution
+        derived in lecture
+        """
+
         # Get optimal weights and bias term
         self.w = np.matmul(np.matmul(np.linalg.inv(np.matmul(X.T, X)), X.T), y)
         self.b = self.b
 
-    def predict(self, X):
+        # We are not returning anything; just updating our weights
+        return None
+
+    def predict(self, X: np.ndarray) -> np.ndarray:
+        """ "
+        Using optimized weights and biases, calculate y_pred
+        """
         print(self.w.shape)
         print(X.shape)
+        # We are returning our predicted value/label using our optimized weight set
         return np.matmul(self.w.T, X.T) + self.b
 
 
@@ -29,8 +48,13 @@ class GradientDescentLinearRegression(LinearRegression):
     """
 
     def fit(
-        self, X: np.ndarray, y: np.ndarray, lr: float = 0.0000001, epochs: int = 100000
+        self, X: np.ndarray, y: np.ndarray, lr: float = 0.0000001, epochs: int = 50000
     ) -> None:
+
+        """
+        Over several iterations, adjust the weights and biases appropriately
+        towards their most optimal values using gradient descent
+        """
         # raise NotImplementedError()
         losses = []
         num_samples, num_features = X.shape
@@ -63,4 +87,5 @@ class GradientDescentLinearRegression(LinearRegression):
         print("Final weights: " + str(self.w))
         print(self.w.shape)
         print(X.shape)
-        return np.matmul(X, self.w) + self.b, self.losses
+        print("y_pred shape: " + str(np.matmul(X, self.w) + self.b))
+        return np.matmul(X, self.w) + self.b
