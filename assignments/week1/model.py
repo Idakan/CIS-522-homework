@@ -27,7 +27,7 @@ class LinearRegression:
 
         # Get optimal weights and bias term
         self.w = np.matmul(np.matmul(np.linalg.inv(np.matmul(X.T, X)), X.T), y)
-        self.b = self.b
+        self.b = 0
 
         # We are not returning anything; just updating our weights
         return None
@@ -84,8 +84,4 @@ class GradientDescentLinearRegression(LinearRegression):
         Returns:
             np.ndarray: The predicted output.
         """
-        print("Final weights: " + str(self.w))
-        print(self.w.shape)
-        print(X.shape)
-        print("y_pred shape: " + str(np.matmul(X, self.w) + self.b))
         return np.matmul(X, self.w) + self.b
