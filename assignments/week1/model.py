@@ -1,7 +1,7 @@
 import numpy as np
 
 
-class LinearRegression():
+class LinearRegression:
     # w: np.ndarray
     # b: float
 
@@ -28,7 +28,9 @@ class GradientDescentLinearRegression(LinearRegression):
     A linear regression model that uses gradient descent to fit the model.
     """
 
-    def fit(self, X: np.ndarray, y: np.ndarray, lr: float = 0.0000001, epochs: int = 100000) -> None:
+    def fit(
+        self, X: np.ndarray, y: np.ndarray, lr: float = 0.0000001, epochs: int = 100000
+    ) -> None:
         # raise NotImplementedError()
         losses = []
         num_samples, num_features = X.shape
@@ -36,9 +38,8 @@ class GradientDescentLinearRegression(LinearRegression):
         self.b = 0
         y = y.reshape(num_samples, 1)
 
-
         for i in range(epochs):
-            y_hat = np.matmul(X,self.w) + self.b
+            y_hat = np.matmul(X, self.w) + self.b
 
             dL_dw = 0
             dL_db = 0
@@ -48,8 +49,8 @@ class GradientDescentLinearRegression(LinearRegression):
                 dL_dw += (y_hat[j] - y[j]) * X[j] / num_features
             dL_dw = dL_dw.reshape(num_features, 1)
 
-            self.w -= (lr * dL_dw)
-            self.b -= - (lr * dL_db)
+            self.w -= lr * dL_dw
+            self.b -= -(lr * dL_db)
 
     def predict(self, X: np.ndarray) -> np.ndarray:
         """
