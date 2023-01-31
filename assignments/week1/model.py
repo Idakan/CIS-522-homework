@@ -27,7 +27,7 @@ class LinearRegression:
 
         # Get optimal weights and bias term
         self.w = np.matmul(np.matmul(np.linalg.inv(np.matmul(X.T, X)), X.T), y)
-        self.b = 0.0
+        self.b = 0
 
         # We are not returning anything; just updating our weights
         return None
@@ -56,7 +56,7 @@ class GradientDescentLinearRegression(LinearRegression):
         towards their most optimal values using gradient descent
         """
         # raise NotImplementedError()
-        losses = []
+
         num_samples, num_features = X.shape
         self.w = np.zeros((num_features, 1))
         self.b = 0
