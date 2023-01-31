@@ -27,7 +27,7 @@ class LinearRegression:
 
         # Get optimal weights and bias term
         self.w = np.matmul(np.matmul(np.linalg.inv(np.matmul(X.T, X)), X.T), y)
-        self.b = 0
+        self.b = 0.0
 
         # We are not returning anything; just updating our weights
         return None
