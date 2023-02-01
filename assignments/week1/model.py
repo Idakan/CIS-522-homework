@@ -11,7 +11,7 @@ class LinearRegression:
 
     def __init__(self):
         """ "
-        Initialize weights and biases
+        Initialize weights and biases.
         """
         self.b = 0
         self.w = np.ndarray(1)
