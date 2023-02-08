@@ -4,9 +4,10 @@ import torch
 
 class MLP(torch.nn.Module):
     """
-      Create a MLP with extreme flexibility
+    Create a MLP with extreme flexibility
 
     """
+
     def __init__(
         self,
         input_size: int,
