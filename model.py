@@ -50,7 +50,6 @@ class GradientDescentLinearRegression(LinearRegression):
     def fit(
         self, X: np.ndarray, y: np.ndarray, lr: float = 0.0000001, epochs: int = 50000
     ) -> None:
-
         """
         Over several iterations, adjust the weights and biases appropriately
         towards their most optimal values using gradient descent

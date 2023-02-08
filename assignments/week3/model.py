@@ -32,7 +32,7 @@ class MLP(torch.nn.Module):
             input_size = next_num_inputs
 
             # Create final layer
-        print(self.layers)
+
         self.out = torch.nn.Linear(input_size, num_classes)
 
     def forward(self, x):
