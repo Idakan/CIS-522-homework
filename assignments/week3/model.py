@@ -4,7 +4,7 @@ import torch
 
 class MLP(torch.nn.Module):
     """
-    Create a MLP with extreme flexibility
+    Create a MLP class implementing torch.nn.Module principles
 
     """
 
