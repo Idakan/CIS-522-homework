@@ -1,9 +1,12 @@
-import torch
 from typing import Callable
 import torch
 
 
 class MLP(torch.nn.Module):
+    """
+      Create a MLP with extreme flexibility
+
+    """
     def __init__(
         self,
         input_size: int,
@@ -35,7 +38,7 @@ class MLP(torch.nn.Module):
 
         self.out = torch.nn.Linear(input_size, num_classes)
 
-    def forward(self, x):
+    def forward(self, x) -> torch.nn.Linear:
         """
         Forward pass of the network.
 
