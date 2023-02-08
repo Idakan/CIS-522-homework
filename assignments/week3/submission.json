@@ -7,8 +7,7 @@
         }
     ],
     "sources": [
-        "https://example.com",
-        "Conversations with TA (include TA's name)",
-        "LLM (include information about the LLM and how it was used)"
+        "Conversations with TA (Yuying Fan)",
+        "Class Workbooks (mainly W3D1 and W3D2)"
     ]
 }
