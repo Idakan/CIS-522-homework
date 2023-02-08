@@ -36,8 +36,7 @@ class LinearRegression:
         """ "
         Using optimized weights and biases, calculate y_pred
         """
-        print(self.w.shape)
-        print(X.shape)
+
         # We are returning our predicted value/label using our optimized weight set
         return np.matmul(self.w.T, X.T) + self.b
 
@@ -50,7 +49,6 @@ class GradientDescentLinearRegression(LinearRegression):
     def fit(
         self, X: np.ndarray, y: np.ndarray, lr: float = 0.0000001, epochs: int = 50000
     ) -> None:
-
         """
         Over several iterations, adjust the weights and biases appropriately
         towards their most optimal values using gradient descent
