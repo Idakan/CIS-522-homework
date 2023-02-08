@@ -5,14 +5,13 @@ import torch
 
 class MLP(torch.nn.Module):
     def __init__(
-
-            self,
-            input_size: int,
-            hidden_size: int,
-            num_classes: int,
-            hidden_count: int = 1,
-            activation: Callable = torch.nn.ReLU(),
-            initializer: Callable = torch.nn.init.ones_,
+        self,
+        input_size: int,
+        hidden_size: int,
+        num_classes: int,
+        hidden_count: int = 1,
+        activation: Callable = torch.nn.ReLU(),
+        initializer: Callable = torch.nn.init.ones_,
     ) -> None:
         """
         Initialize the MLP.
@@ -27,7 +26,7 @@ class MLP(torch.nn.Module):
         super(MLP, self).__init__()
         self.actv = activation
         self.layers = torch.nn.ModuleList()
-        print('hi')
+        print("hi")
         for i in range(hidden_count):
             next_num_inputs = hidden_size
             self.layers += [torch.nn.Linear(input_size, next_num_inputs)]
@@ -35,7 +34,7 @@ class MLP(torch.nn.Module):
 
             # Create final layer
         print(self.layers)
-        print('hello')
+        print("hello")
         self.out = torch.nn.Linear(input_size, num_classes)
 
     def forward(self, x):
