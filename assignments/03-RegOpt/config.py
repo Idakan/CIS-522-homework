@@ -11,6 +11,7 @@ class CONFIG:
     Class that allows us to adjust hyperparameters to find ideal model parameters
 
     """
+
     batch_size = 256
     num_epochs = 9
     initial_learning_rate = 0.005
