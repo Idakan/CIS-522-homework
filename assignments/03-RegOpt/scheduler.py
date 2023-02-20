@@ -1,6 +1,7 @@
 from typing import List
 from collections import Counter
 from torch.optim.lr_scheduler import _LRScheduler
+import torch
 
 
 class CustomLRScheduler(_LRScheduler):
