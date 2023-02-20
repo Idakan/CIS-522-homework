@@ -8,6 +8,7 @@
     ],
     "sources": [
         "Pytorch Documentation: https://pytorch.org/docs/stable/_modules/torch/optim/lr_scheduler.html",
-        "Inspiration for CIFAR-10 specific learners: https://hd10.dev/posts/experiments_cifar10_part2/"
+        "Inspiration for CIFAR-10 specific learners: https://hd10.dev/posts/experiments_cifar10_part2/",
+        "Workbooks"
     ]
 }
