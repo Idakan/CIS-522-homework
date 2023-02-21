@@ -14,7 +14,7 @@ class CONFIG:
 
     batch_size = 256
     num_epochs = 9
-    initial_learning_rate = 0.003
+    initial_learning_rate = 0.005
     initial_weight_decay = 0
 
     lrs_kwargs = {
