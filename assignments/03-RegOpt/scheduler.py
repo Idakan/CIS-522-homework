@@ -15,7 +15,7 @@ class CustomLRScheduler(_LRScheduler):
         self,
         optimizer: torch.optim.Optimizer,
         milestones: List[int],
-        gamma=0.99,
+        gamma=0.999,
         last_epoch=-1,
         verbose=False,
     ):
