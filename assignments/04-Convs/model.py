@@ -2,6 +2,10 @@ import torch
 
 
 class Model(torch.nn.Module):
+    """
+    CNN Model
+    """
+
     def __init__(self, num_channels: int, num_classes: int) -> None:
         """
         Initialize our model
