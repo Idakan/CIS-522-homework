@@ -1,9 +1,11 @@
 import torch
-import torch.nn as nn
 
 
 class Model(torch.nn.Module):
     def __init__(self, num_channels: int, num_classes: int) -> None:
+        """
+        Initialize our model
+        """
         super().__init__()
         self.flatten = torch.nn.Flatten()
 
@@ -32,5 +34,8 @@ class Model(torch.nn.Module):
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
+        """
+        Run the model on our tensor
+        """
         outputs = self.CNN_stack(x)
         return outputs
