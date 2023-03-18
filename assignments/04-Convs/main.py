@@ -28,6 +28,7 @@ def get_cifar10_data() -> Tuple[DataLoader, DataLoader]:
         train_loader (DataLoader): The training data loader.
         test_loader (DataLoader): The test data loader.
     """
+
     # Get the training data:
     train_data = CIFAR10(
         root="data/cifar10", train=True, download=True, transform=CONFIG.transforms
