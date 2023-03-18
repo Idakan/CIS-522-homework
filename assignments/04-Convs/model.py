@@ -17,7 +17,7 @@ class Model(torch.nn.Module):
             torch.nn.Conv2d(
                 in_channels=num_channels, out_channels=16, kernel_size=(3, 3)
             ),
-            torch.nn.ReLU(),
+           # torch.nn.ReLU(),
             # Now 16x30x30
             torch.nn.MaxPool2d(kernel_size=(3, 3)),
             torch.nn.ReLU(),
