@@ -15,14 +15,15 @@ class Model(torch.nn.Module):
         self.CNN_stack = torch.nn.Sequential(
             # 3x32x32
             torch.nn.Conv2d(
-                in_channels=num_channels, out_channels=16, kernel_size=(5, 5)
+                in_channels=num_channels, out_channels=16, kernel_size=(3, 3)
             ),
             torch.nn.ReLU(),
-            # Now 16x28x28
-            torch.nn.MaxPool2d(kernel_size=(2, 2)),
+            # Now 16x30x30
+            torch.nn.MaxPool2d(kernel_size=(3, 3)),
             torch.nn.ReLU(),
+            # Now 16x10x10
             torch.nn.Flatten(),
-            torch.nn.Linear(in_features=16 * 14 * 14, out_features=num_classes),
+            torch.nn.Linear(in_features=16 * 10 * 10, out_features=num_classes),
         )
 
     def forward(self, x: torch.Tensor) -> torch.Tensor:
